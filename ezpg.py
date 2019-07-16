@@ -2,7 +2,9 @@ import pygame
 pygame.init()
 
 canvas = None
-fillcolor = (0, 0, 0)
+fillcolor = (255, 255, 255, 255)
+strokecolor = (0, 0, 0, 255)
+sw = 1
 
 def start(setup, draw):
 	setup()
@@ -28,7 +30,29 @@ def background(r, g, b):
 	canvas.fill((r,g,b))
 
 def rect(x, y, width, height):
-	pygame.draw.rect(canvas, fillcolor, (x, y, width, height))
+	pygame.draw.rect(canvas, fillcolor, (x, y, width, height), 0)
+	if strokecolor[3] != 0:
+		pygame.draw.rect(canvas, strokecolor, (x, y, width, height), sw)
+
+def fill(r,g,b,a=255):
+	global fillcolor
+	fillcolor = (r,g,b,a)
+
+def stroke(r,g,b,a=255):
+	global strokecolor
+	strokecolor = (r,g,b,a)
+
+def noStroke():
+	global strokecolor
+	strokecolor = (0,0,0,0)
+
+def noFill():
+	global fillcolor
+	fillcolor = (0,0,0,0)
+
+def strokeWeight(weight):
+	global sw
+	sw = weight
 
 def ellipse(x, y, width, height):
 	pass
