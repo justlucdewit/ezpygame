@@ -1,7 +1,9 @@
-import pygame
-pygame.init()
+from ezpygame import *
 
-def start(setup, draw):
-	setup()
-	while True:
-		draw()
+def setup():
+	createCanvas(800, 800)
+
+def draw():
+	pass
+
+start(setup, draw)
