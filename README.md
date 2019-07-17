@@ -93,3 +93,13 @@ y)		[int/float] y coordinate of left upper corner
 width)	[int/float] width of the rectangle
 height)	[int/float] height of the rectangle
 ```
+
+#####ellipse(x, y, width, height)
+```
+draws a rectangle on the screen
+
+x)		[int/float] x coordinate of left upper corner
+y)		[int/float] y coordinate of left upper corner
+width)	[int/float] width of the ellipse
+height)	[int/float] height of the ellipse
+```

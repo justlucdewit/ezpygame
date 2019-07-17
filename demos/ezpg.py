@@ -55,4 +55,6 @@ def strokeWeight(weight):
 	sw = weight
 
 def ellipse(x, y, width, height):
-	pass
+	pygame.draw.ellipse(canvas, fillcolor, (x, y, width, height), 0)
+	if strokecolor[3] != 0:
+		pygame.draw.ellipse(canvas, strokecolor, (x, y, width, height), sw)
