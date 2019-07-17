@@ -103,3 +103,17 @@ y)		[int/float] y coordinate of left upper corner
 width)	[int/float] width of the ellipse
 height)	[int/float] height of the ellipse
 ```
+
+#####mouseX()
+```
+returns the X position of the mouse
+
+*no arguments*
+```
+
+#####mouseY()
+```
+returns the Y position of the mouse
+
+*no arguments*
+```
