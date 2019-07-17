@@ -1,0 +1,22 @@
+welcome to ezpg and thank you for downloading
+if, you dont know what ezpg is. its a python module writen by luc de wit
+its based on a verry popular, already existing module called pygame
+
+pygame is a python module wich can be used to create window applications/
+games. however its required to know alot of python/programming functionality
+like:
+-for loops
+-if statements
+-functions
+-variables
+
+hence it can be a little overwhelming for beginners.
+ezpg is focesed on simplifing python app development for beginners
+and advanced programmers so you can create a fast and simple simulation/
+game/visualization. all u have to do is call a couple of functions
+from within the setup and draw function (if u dont understand what that is,
+look in sketch.py and look at some demos in the demos folder)
+
+the concept is based on the java/javascript libraries: processing and p5.js:
+https://processing.org/
+https://p5js.org/

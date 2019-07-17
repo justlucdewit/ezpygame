@@ -1,0 +1,20 @@
+to change the background color of your sketch you should
+call the background() function
+
+the background function needs 3 arguments discribing the r g b values
+of the color you want to be your background.
+
+the r, g and b values are numbers between 0 and 255
+so if u want no green-ness and alot of blue-ness in your background color
+you want your g value to be 0 and your b value to be 255
+
+example:
+if u want a nice cyan background color you should do:
+`background(36, 120, 255)`
+
+if you have moving objects in your sketch you most likely want to put it in the
+draw function to keep refreshing the background
+
+if nothing will move in your sketch at all, you most likely want to put the
+background function in the setup function to fully optimise the performance of
+the sketch 

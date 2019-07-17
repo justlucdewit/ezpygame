@@ -1,0 +1,14 @@
+the title of the sketch is most likely displayed in the bar at the top
+of the application when you run it. this can be different depending on your OS
+
+to set the title of the sketch just call the rename() function wich accepts a 
+string representing the title
+
+for example if you want the sketch title to be `game`, you should do:
+`rename("game")`
+
+note: the "" are verry important scince it indicates that the argument
+is indeed a string
+
+note 2: you most likely want to put the rename function in the setup function
+to prevent performance issues

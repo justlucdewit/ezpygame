@@ -1,0 +1,52 @@
+to begin creating your first sketch (a ezpg project) follow these steps:
+
+-first ofcourse make sure u have python installed from this link:
+https://www.python.org/
+
+-create your python file wich will contain your code
+this can be called anything what u want as long as it ends
+with .py
+
+-open your newly made "sketch" file inside any text editor
+(this can be notepad, or word but I really recommend to download
+a text editor wich is made to edit code documents like sublime text,
+visual studio code, notepad++, vim etc)
+
+-now you must import the ezpg module, to do this simply type "import ezpg"
+inside of your sketch (if this doesnt work, make sure you have the ezpg.py file
+included in the same folder as your sketch ya dummy) the ezpg.py file can be found
+in the root of this repo or in the demos folder
+
+-gg! now u have excess to every ezpg function available. now u should create 2
+functions called setup and draw, so now you should have this code:
+-----------------------------
+import ezpy
+
+def setup:
+	pass
+
+def draw:
+	pass
+-----------------------------
+
+now as last line we must give the functions we made too the ezpy module and it will
+handle all the executions of the functions by itself!
+
+to do this use the "start" function and give your setup function as first argument
+and your draw function as second argument.
+
+so now this should be your final code:
+-----------------------------
+import ezpy
+
+def setup:
+	pass
+
+def draw:
+	pass
+
+start(setup, draw)
+-----------------------------
+
+note: this code will not beable to run because there was no canvas created. to
+create a canvas look at guide[3]

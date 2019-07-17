@@ -1,0 +1,6 @@
+to create a canvas you must use the createCanvas() function.
+this will most likely have to be called in the your setup function.
+
+it requires 2 arguments describing the width and height of the screen
+so if you want a 1000x700 canvas you should call `createCanvas(1000, 700)`
+INSIDE THE SETUP FUNCTION
