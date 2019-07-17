@@ -117,3 +117,14 @@ returns the Y position of the mouse
 
 *no arguments*
 ```
+
+#####mapping(n, fromMin, fromMax, tillMin, tillMax)
+```
+returns a mapping of a number
+
+n)			[int/float] a number you want to map
+fromMin)	[int/float] the min value n can be
+fromMax)	[int/float]	the max value n can be
+tillMin)	[int/float]	the min value the output can be
+tillMax)	[int/float]	the max value the output can be
+```

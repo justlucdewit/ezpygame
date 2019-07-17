@@ -1,5 +1,6 @@
 import pygame
-pygame.init()
+import sys
+from addons.Xtramath import *
 
 canvas = None
 fillcolor = (255, 255, 255, 255)
