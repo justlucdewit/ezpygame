@@ -23,6 +23,12 @@ def __update__():
 		if event.type == pygame.QUIT:
 			exit()
 
+def mouseX():
+	return pygame.mouse.get_pos()[0]
+
+def mouseY():
+	return pygame.mouse.get_pos()[1]
+
 def rename(name):
 	pygame.display.set_caption(name)
 
