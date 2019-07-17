@@ -46,7 +46,7 @@ b)	[int] b color value of the background color from 0 to 255
 ```
 
 
-#####fill(r, g, b)
+##### fill(r, g, b)
 ```
 changes fill colors of all shapes drawn after this
 
@@ -55,14 +55,14 @@ g)	[int] g color value of the fill color from 0 to 255
 b)	[int] b color value of the fill color from 0 to 255
 ```
 
-#####noFill()
+##### noFill()
 ```
 makes sure that all shapes drawn after this are transparent except the stroke
 
 *no arguments*
 ```
 
-#####stroke(r, g, b)
+##### stroke(r, g, b)
 ```
 sets color of the edge of the shape (the stroke)
 
@@ -71,20 +71,20 @@ g)	[int] g color value of the stroke color from 0 to 255
 b)	[int] b color value of the stroke color from 0 to 255
 ```
 
-#####noStroke()
+##### noStroke()
 ```
 makes sure that all shapes drawn after this have a transparent stroke
 
 *no arguments*
 ```
-#####strokeWeight(weight)
+##### strokeWeight(weight)
 ```
 sets the thinkness of the stroke of all shapes drawn after this
 
 weight) [int] the width of the stroke in pixels
 ```
 
-#####rect(x, y, width, height)
+##### rect(x, y, width, height)
 ```
 draws a rectangle on the screen
 
@@ -94,7 +94,7 @@ width)	[int/float] width of the rectangle
 height)	[int/float] height of the rectangle
 ```
 
-#####ellipse(x, y, width, height)
+##### ellipse(x, y, width, height)
 ```
 draws a rectangle on the screen
 
@@ -104,21 +104,21 @@ width)	[int/float] width of the ellipse
 height)	[int/float] height of the ellipse
 ```
 
-#####mouseX()
+##### mouseX()
 ```
 returns the X position of the mouse
 
 *no arguments*
 ```
 
-#####mouseY()
+##### mouseY()
 ```
 returns the Y position of the mouse
 
 *no arguments*
 ```
 
-#####mapping(n, fromMin, fromMax, tillMin, tillMax)
+##### mapping(n, fromMin, fromMax, tillMin, tillMax)
 ```
 returns a mapping of a number
 
