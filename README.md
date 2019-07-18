@@ -1,11 +1,11 @@
 # ezpg
 #### easy-pygame
-##### hey there!, thanks for looking into ezpg
-##### ezpg is a python module used for creating quick
-##### and easy python games/visualizations
+hey there!, thanks for looking into ezpg
+ezpg is a python module used for creating quick
+and easy python games/visualizations
 
-##### its based on the famous processing framework wich
-##### is verry beginners friendly yet verry powerfull
+its based on the famous processing framework wich
+is verry beginners friendly yet verry powerfull
 
 ##### list of functions:
 ###### createCanvas()
