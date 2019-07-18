@@ -128,3 +128,17 @@ fromMax)	[int/float]	the max value n can be
 tillMin)	[int/float]	the min value the output can be
 tillMax)	[int/float]	the max value the output can be
 ```
+
+##### width()
+```
+returns width of the screen
+
+*no arguments*
+```
+
+##### height()
+```
+returns height of the screen
+
+*no arguments*
+```
