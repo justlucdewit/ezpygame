@@ -8,6 +8,10 @@ strokecolor = (0, 0, 0, 255)
 w = 0
 h = 0
 sw = 1
+tcol = [0, 0, 0]
+
+pygame.init()
+font = pygame.font.SysFont('Arial', 30)
 
 def start(setup, draw):
 	setup()
@@ -34,6 +38,10 @@ def __update__():
 		if event.type == pygame.QUIT:
 			exit()
 
+def text(txt, x, y):
+	t = font.render(txt, False, (tcol[0], tcol[1], tcol[2]))
+	canvas.blit(t,(x,y))
+
 def mouseX():
 	return pygame.mouse.get_pos()[0]
 
@@ -53,6 +61,8 @@ def rect(x, y, width, height):
 
 def fill(r,g,b,a=255):
 	global fillcolor
+	global tcol
+	tcol = [r, g, b]
 	fillcolor = (r,g,b,a)
 
 def stroke(r,g,b,a=255):
