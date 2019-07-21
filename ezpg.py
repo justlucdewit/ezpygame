@@ -10,13 +10,31 @@ h = 0
 sw = 1
 tcol = [0, 0, 0]
 
+keycodes = {
+	"A": 97,
+	"B": 98,
+	"C": 99,
+	"D": 100,
+	"E": 101,
+	"F": 102,
+	"G": 103,
+}
+
+class sketch():
+	def setup():
+		pass
+
+	def draw():
+		pass
+
+
 pygame.init()
 font = pygame.font.SysFont('Arial', 30)
 
-def start(setup, draw):
-	setup()
+def start(app):
+	app.setup()
 	while True:
-		draw()
+		app.draw()
 		__update__()
 
 def createCanvas(width, height):
@@ -97,3 +115,9 @@ def height():
 
 def mapping(n, imin, imax, omin, omax):
 	return omin+(omax-omin)*(n-imin)/(imax-imin)
+
+def isPressed(key):
+	if pygame.key.get_pressed()[keycodes[key]] == 1:
+		return True
+	else:
+		return False
