@@ -51,6 +51,9 @@ keycodes = {
 	"right": 275,
 	"up": 273,
 	"down": 274,
+	"lmb": 0,
+	"mmb": 1,
+	"rmb": 2,
 }
 
 class sketch():
@@ -150,7 +153,13 @@ def mapping(n, imin, imax, omin, omax):
 	return omin+(omax-omin)*(n-imin)/(imax-imin)
 
 def isPressed(key):
-	if pygame.key.get_pressed()[keycodes[key]] == 1:
-		return True
+	if key != "rmb" and key != "mmb" and key != "lmb":
+		if pygame.key.get_pressed()[keycodes[key]] == 1:
+			return True
+		else:
+			return False
 	else:
-		return False
+		if pygame.mouse.get_pressed()[keycodes[key]] == 1:
+			return True
+		else:
+			return False
