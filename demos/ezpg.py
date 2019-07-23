@@ -154,3 +154,11 @@ def isPressed(key):
 		return True
 	else:
 		return False
+
+def constrain(n, min, max):
+	if n < min:
+		return min
+	if n > max:
+		return max
+	else:
+		return n
