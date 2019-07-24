@@ -162,3 +162,6 @@ def constrain(n, min, max):
 		return max
 	else:
 		return n
+
+def point(x, y):
+    canvas.set_at((x, y), fillcolor)   
