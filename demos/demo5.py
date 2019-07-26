@@ -1,12 +1,33 @@
 from ezpg import *
 
-class app(sketch):
-    def setup():
-        createCanvas(600, 600)
-        background(100, 100, 100)
-        fill(255, 0, 0)
-        point(10, 10)
-    def draw():
-        pass
+#graph calculator
 
-start(app)
+ww = 600#window width
+wh = 600#window height
+
+minX = -10
+maxX = 10
+minY = -10
+maxY = 10
+
+bg = (255, 255, 255)#background color
+mainAxisColor = (0, 0, 0)#main axis color
+gridColor = (200, 200, 200)
+def setup():
+	createCanvas(ww, wh)
+	transform(width()/2, height()/2)
+	background(*bg)
+		
+
+	#create the main axis
+	strokeWeight(2)
+	fill(*mainAxisColor)
+	line(-width()/2, 0, width()/2, 0)
+	line(0, -height()/2, 0, height()/2)
+
+	#create grid
+
+def draw():
+	pass
+
+start(setup, draw)
