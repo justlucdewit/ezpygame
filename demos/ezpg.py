@@ -111,10 +111,13 @@ def mapping(n, imin, imax, omin, omax):
 	return omin+(omax-omin)*(n-imin)/(imax-imin)
 
 def isPressed(key):
-	if pygame.key.get_pressed()[keycodes[key]] == 1:
-		return True
+	if key != "lmb" or key != "rmb" or key != "mmb":
+		if pygame.key.get_pressed()[keycodes[key]] == 1:
+			return True
 	else:
-		return False
+		if pygame.mouse.get_pressed()[keycpdes[key]] == 1:
+			return True
+	return Fasle
 
 def constrain(n, min, max):
 	if n < min:

@@ -11,6 +11,9 @@ h = 0
 sw = 1
 tcol = [0, 0, 0]
 
+#translation
+xt = 0
+yt = 0
 
 
 class sketch():
@@ -38,8 +41,6 @@ def createCanvas(width, height):
 	w = width
 	h = height
 
-	print(w)
-
 	canvas = pygame.display.set_mode((width, height))
 	pygame.display.set_caption("sketch")
 
@@ -51,7 +52,7 @@ def __update__():
 
 def text(txt, x, y):
 	t = font.render(txt, False, (tcol[0], tcol[1], tcol[2]))
-	canvas.blit(t,(x,y))
+	canvas.blit(t,(x+xt,y+yt))
 
 def mouseX():
 	return pygame.mouse.get_pos()[0]
@@ -93,9 +94,9 @@ def strokeWeight(weight):
 	sw = weight
 
 def ellipse(x, y, width, height):
-	pygame.draw.ellipse(canvas, fillcolor, (x, y, width, height), 0)
+	pygame.draw.ellipse(canvas, fillcolor, (x+xt, y+yt, width, height), 0)
 	if strokecolor[3] != 0:
-		pygame.draw.ellipse(canvas, strokecolor, (x, y, width, height), sw)
+		pygame.draw.ellipse(canvas, strokecolor, (x+xt, y+yt, width, height), sw)
 
 def random(min, max):
 	return r.uniform(min, max)
@@ -110,10 +111,13 @@ def mapping(n, imin, imax, omin, omax):
 	return omin+(omax-omin)*(n-imin)/(imax-imin)
 
 def isPressed(key):
-	if pygame.key.get_pressed()[keycodes[key]] == 1:
-		return True
+	if key != "lmb" or key != "rmb" or key != "mmb":
+		if pygame.key.get_pressed()[keycodes[key]] == 1:
+			return True
 	else:
-		return False
+		if pygame.mouse.get_pressed()[keycpdes[key]] == 1:
+			return True
+	return Fasle
 
 def constrain(n, min, max):
 	if n < min:
@@ -124,5 +128,10 @@ def constrain(n, min, max):
 		return n
 
 def line(x1, y1, x2, y2):
-	pygame.draw.line(canvas, fillcolor, (x1, y1), (x2, y2))
+	pygame.draw.line(canvas, fillcolor, (x1+xt, y1+yt), (x2+xt, y2+yt), sw)
 	
+def transform(x, y):
+	global xt
+	global yt
+	xt = x
+	yt = y 
