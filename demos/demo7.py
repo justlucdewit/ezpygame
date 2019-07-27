@@ -6,8 +6,8 @@ rows = None
 grid = []
 stack = []
 w = int(input("how many pixels wide do u want each cell?"))
-he = int(input("how wide do you want your screen in pixels?"))
-wi = int(input("how high do you want your screen in pixels?"))
+wi = int(input("how wide do you want your screen in pixels?"))
+he = int(input("how high do you want your screen in pixels?"))
 
 if w < 5:
 	print("cells cant be smaller then 5")
@@ -141,7 +141,7 @@ def setup():
 	global grid
 	global current
 
-	createCanvas(he, wi)
+	createCanvas(wi, he)
 	cols = floor(height()/w)
 	rows = floor(width()/w)
 
