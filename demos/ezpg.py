@@ -135,3 +135,10 @@ def transform(x, y):
 	global yt
 	xt = x
 	yt = y 
+
+def image(i, x, y):
+	canvas.blit(i,(x+xt,y+yt))
+
+
+def loadImage(url):
+	return pygame.image.load(url)
