@@ -31,7 +31,7 @@ def start(s, d):
 	s()
 	while True:
 		d()
-		__update__()
+		update()
 
 def createCanvas(width, height):
 	global canvas
@@ -44,7 +44,7 @@ def createCanvas(width, height):
 	canvas = pygame.display.set_mode((width, height))
 	pygame.display.set_caption("sketch")
 
-def __update__():
+def update():
 	pygame.display.flip()
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -135,3 +135,10 @@ def transform(x, y):
 	global yt
 	xt = x
 	yt = y 
+
+def image(i, x, y):
+	canvas.blit(i,(x+xt,y+yt))
+
+
+def loadImage(url):
+	return pygame.image.load(url)

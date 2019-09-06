@@ -15,6 +15,46 @@ tcol = [0, 0, 0]
 xt = 0
 yt = 0
 
+fs = 30
+
+class Button():
+	def __init__(self, x, y, w, h):
+		self.x = x
+		self.y = y
+		self.w = w
+		self.h = h
+		self.capt = ""
+		self.fs = 20
+		self.normcol = []
+		self.presscol = []
+
+	def draw(self):
+		#store variables that need reset
+		tmp1 = fs
+		tmp2 = fillcolor
+
+		fill(*self.normcol)
+		if isPressed("lmb") and mouseX()>self.x and mouseX()<self.x+self.w and mouseY()>self.y and mouseY()<self.y+self.h:
+			fill(*self.presscol)
+
+		fontSize(self.fs)
+		rect(self.x, self.y, self.w, self.h)
+		fill(*tmp2)
+		text(self.capt, self.x+5, self.y)
+
+		#reset the variables
+		fill(*tmp2)
+		fontSize(tmp1)
+
+
+	def setCaption(self, txt, size=20):
+		self.capt = txt
+		self.fs = size
+
+	def setColor(self, nr, ng, nb, pr, pg, pb):
+		self.normcol = [nr,ng,nb]
+		self.presscol = [pr,pg,pb]
+
 
 class sketch():
 	def setup():
@@ -27,11 +67,23 @@ class sketch():
 pygame.init()
 font = pygame.font.SysFont('Arial', 30)
 
+def seticon(image):
+	pygame.display.set_icon(image)
+
 def start(s, d):
 	s()
 	while True:
 		d()
 		update()
+
+def fontSize(size):
+	global font
+	global fs
+	fs = size
+	font = pygame.font.SysFont('Arial', size)
+
+def getFontSize():
+	return fs
 
 def createCanvas(width, height):
 	global canvas
@@ -41,7 +93,7 @@ def createCanvas(width, height):
 	w = width
 	h = height
 
-	canvas = pygame.display.set_mode((width, height))
+	canvas = pygame.display.set_mode((width, height), pygame.SRCALPHA)
 	pygame.display.set_caption("sketch")
 
 def update():
@@ -111,13 +163,13 @@ def mapping(n, imin, imax, omin, omax):
 	return omin+(omax-omin)*(n-imin)/(imax-imin)
 
 def isPressed(key):
-	if key != "lmb" or key != "rmb" or key != "mmb":
-		if pygame.key.get_pressed()[keycodes[key]] == 1:
+	if key != "lmb" and key != "rmb" and key != "mmb":
+		if pygame.key.get_pressed()[keycodes[key]] == True:
 			return True
 	else:
-		if pygame.mouse.get_pressed()[keycpdes[key]] == 1:
+		if pygame.mouse.get_pressed()[keycodes[key]] == True:
 			return True
-	return Fasle
+	return False
 
 def constrain(n, min, max):
 	if n < min:
@@ -139,6 +191,8 @@ def transform(x, y):
 def image(i, x, y):
 	canvas.blit(i,(x+xt,y+yt))
 
+def imageScale(i, w, h):
+	return pygame.transform.scale(i, (w, h))
 
 def loadImage(url):
 	return pygame.image.load(url)

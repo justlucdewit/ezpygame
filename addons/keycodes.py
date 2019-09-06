@@ -39,4 +39,7 @@ keycodes = {
 	"right": 275,
 	"up": 273,
 	"down": 274,
+	"rmb": 2,
+	"lmb": 0,
+	"mmb": 1,
 }
