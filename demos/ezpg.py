@@ -3,6 +3,9 @@ import sys
 import random as r
 from addons.keycodes import *
 
+from tkinter.colorchooser import *
+import tkinter as tk
+
 canvas = None
 fillcolor = (255, 255, 255, 255)
 strokecolor = (0, 0, 0, 255)
@@ -16,6 +19,13 @@ xt = 0
 yt = 0
 
 fs = 30
+
+def promptColor():
+	root = tk.Tk()
+	root.withdraw()
+	color = askcolor()[0]
+	root.destroy()
+	return color
 
 class Button():
 	def __init__(self, x, y, w, h):
