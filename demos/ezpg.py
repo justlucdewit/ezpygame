@@ -11,14 +11,17 @@ fillcolor = (255, 255, 255, 255)
 strokecolor = (0, 0, 0, 255)
 w = 0
 h = 0
-sw = 1
-tcol = [0, 0, 0]
+sw = 1#stroke width
+tcol = [0, 0, 0]#text color
 
 #translation
 xt = 0
 yt = 0
 
-fs = 30
+fs = 30#font size
+cursor = True
+
+scrollDirection = 0
 
 def promptColor():
 	root = tk.Tk()
@@ -33,10 +36,11 @@ class Button():
 		self.y = y
 		self.w = w
 		self.h = h
-		self.capt = ""
-		self.fs = 20
-		self.normcol = []
-		self.presscol = []
+		self.caption = ""
+		self.fontSize = 20
+		self.normcol = [255, 255, 255]
+		self.presscol = [255, 255, 255]
+		self.onClick = None
 
 	def draw(self):
 		#store variables that need reset
@@ -46,20 +50,18 @@ class Button():
 		fill(*self.normcol)
 		if isPressed("lmb") and mouseX()>self.x and mouseX()<self.x+self.w and mouseY()>self.y and mouseY()<self.y+self.h:
 			fill(*self.presscol)
+			if self.onClick != None:
+				self.onClick()
+				return None
 
-		fontSize(self.fs)
+		fontSize(self.fontSize)
 		rect(self.x, self.y, self.w, self.h)
-		fill(*tmp2)
-		text(self.capt, self.x+5, self.y)
+		fill(0, 0, 0)
+		text(self.caption, self.x+5, self.y)
 
 		#reset the variables
 		fill(*tmp2)
 		fontSize(tmp1)
-
-
-	def setCaption(self, txt, size=20):
-		self.capt = txt
-		self.fs = size
 
 	def setColor(self, nr, ng, nb, pr, pg, pb):
 		self.normcol = [nr,ng,nb]
@@ -107,10 +109,21 @@ def createCanvas(width, height):
 	pygame.display.set_caption("sketch")
 
 def update():
+	global scrollDirection
+	scrollDirection = 0
 	pygame.display.flip()
 	for event in pygame.event.get():
+		if event.type == pygame.MOUSEBUTTONDOWN:
+			if event.button == 4:   
+				scrollDirection = -1
+			elif event.button == 5:   
+				scrollDirection = 1
+
 		if event.type == pygame.QUIT:
 			exit()
+
+def scroll():
+	return scrollDirection
 
 def text(txt, x, y):
 	t = font.render(txt, False, (tcol[0], tcol[1], tcol[2]))
@@ -206,3 +219,12 @@ def imageScale(i, w, h):
 
 def loadImage(url):
 	return pygame.image.load(url)
+
+def toggleCursor():
+	global cursor
+	if cursor == True:
+		cursor = False
+		pygame.mouse.set_visible(cursor)
+	else:
+		cursor = True
+		pygame.mouse.set_visible(cursor)
